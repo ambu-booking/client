@@ -1,20 +1,25 @@
-import { Button, Checkbox, Radio, Space } from "antd";
+import { Button, Input, Space } from "antd";
+import { CompassOutlined, SearchOutlined } from "@ant-design/icons";
 import Title from "antd/es/typography/Title";
 import "./App.less";
 
 function App() {
   return (
     <>
-      <Title level={2}>Install & Setup Ant Design</Title>
-      <Space className='flex flex-column'>
-        <Button type='primary'>Primary Button</Button>
-        <Button>Default Button</Button>
-        <Button type='dashed'>Dashed Button</Button>
-        <Button type='text'>Text Button</Button>
-        <Button type='link'>Link Button</Button>
-        <Radio className='gap-1'>Radio</Radio>
-        <Checkbox className='gap-1'>Checkbox</Checkbox>
-      </Space>
+      <Title level={2}>Ambu-rdv</Title>
+      <Space.Compact size='large' style={{ width: 600 }}>
+        <Input
+          className='gap-5'
+          prefix={<SearchOutlined />}
+          placeholder='Nom de la société...'
+        />
+        <Input
+          className='gap-5'
+          prefix={<CompassOutlined />}
+          placeholder='Où ?'
+        />
+        <Button type='primary'>Rechercher</Button>
+      </Space.Compact>
     </>
   );
 }
